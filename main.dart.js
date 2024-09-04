@@ -50434,7 +50434,7 @@ ep(a,b){var s=this.a,r=J.bG(s)
 if(b?r.B(s,a):r.v(s,a))this.aC()}}
 A.yn.prototype={
 O(a){var s=null
-return new A.pz(B.Bl,"Flutter Demo",A.a23(s,A.a3V(B.I,s,s,B.Bc),!0),s)}}
+return new A.pz(B.Bl,"My Flutter Web App",A.a23(s,A.a3V(B.I,s,s,B.Bc),!0),s)}}
 A.pN.prototype={
 ah(){return new A.tA()}}
 A.tA.prototype={
