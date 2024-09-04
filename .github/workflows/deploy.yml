@@ -3,7 +3,7 @@ name: Deploy Flutter Web App to GitHub Pages
 on:
   push:
     branches:
-      - main  # Change this to your default branch if it's not 'main'
+      - main  # Replace with your default branch if different
 
 jobs:
   build:
@@ -13,12 +13,12 @@ jobs:
     - name: Checkout source code
       uses: actions/checkout@v3
       with:
-        fetch-depth: 0
+        fetch-depth: 0  # Fetch all history so the deployment can proceed
 
     - name: Set up Flutter
       uses: subosito/flutter-action@v2
       with:
-        flutter-version: '3.24.0' # Use the desired Flutter version
+        flutter-version: '3.13.0'  # Use the appropriate version
 
     - name: Install dependencies
       run: flutter pub get
@@ -30,9 +30,9 @@ jobs:
       uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: build/web
-        # Uncomment the following line if you have a custom domain
-        # cname: 'yourdomain.com'
+        publish_dir: build/web  # Ensure this is set correctly to the output directory
+        keep_files: false  # Removes old files from gh-pages branch, ensuring a clean deploy
+        # cname: 'yourdomain.com'  # Uncomment if using a custom domain
 
     - name: Post deployment message
       run: echo "Flutter web app deployed to GitHub Pages!"
