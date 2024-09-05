@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:device_frame/device_frame.dart';
 import 'package:flutter/material.dart';
 import 'package:github_io/widgets/onboarding_slider.dart';
 import 'package:particles_flutter/component/particle/particle.dart';
@@ -62,23 +63,25 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
         Center(
-            child: Card(
-                elevation: 12,
-                color: Colors.black,
-                child: Container(
-                  width: 400,
-                  height: 600,
-                  decoration: BoxDecoration(
+            child: DeviceFrame(
+                device: Devices.ios.iPhone13ProMax,
+                screen: Card(
+                    elevation: 12,
                     color: Colors.black,
-                    borderRadius: BorderRadius.circular(30),
-                    border: Border.all(color: Colors.black, width: 5),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child:
-                        OnboardingSlider(), // Place the onboarding slider here
-                  ),
-                )))
+                    child: Container(
+                      width: 400,
+                      height: 600,
+                      decoration: BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.circular(30),
+                        border: Border.all(color: Colors.black, width: 5),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child:
+                            OnboardingSlider(), // Place the onboarding slider here
+                      ),
+                    ))))
       ]),
     );
   }
@@ -86,12 +89,12 @@ class _MyHomePageState extends State<MyHomePage> {
   List<Particle> _createParticles() {
     var rng = Random();
     List<Particle> particles = [];
-    for (int i = 0; i < 140; i++) {
+    for (int i = 0; i < 100; i++) {
       particles.add(Particle(
         color: Colors.white.withOpacity(0.6),
         size: rng.nextDouble() * 10,
-        velocity: Offset(rng.nextDouble() * 30 * _randomSign(),
-            rng.nextDouble() * 40 * _randomSign()),
+        velocity: Offset(rng.nextDouble() * 20 * _randomSign(),
+            rng.nextDouble() * 30 * _randomSign()),
       ));
     }
     return particles;
