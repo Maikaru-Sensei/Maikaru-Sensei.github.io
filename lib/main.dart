@@ -40,19 +40,22 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-          child: Container(
-        width: 400,
-        height: 600,
-        decoration: BoxDecoration(
-          color: Colors.black,
-          borderRadius: BorderRadius.circular(30),
-          border: Border.all(color: Colors.black, width: 5),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: OnboardingSlider(), // Place the onboarding slider here
-        ),
-      )),
+          child: Card(
+              elevation: 12,
+              color: Colors.black,
+              child: Container(
+                width: 400,
+                height: 600,
+                decoration: BoxDecoration(
+                  color: Colors.black,
+                  borderRadius: BorderRadius.circular(30),
+                  border: Border.all(color: Colors.black, width: 5),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: OnboardingSlider(), // Place the onboarding slider here
+                ),
+              ))),
     );
   }
 }
