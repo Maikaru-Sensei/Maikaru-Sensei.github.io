@@ -47,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: Stack(children: [
         Container(
-          color: Color(0xFF424242),
+          color: Color(0xFF212121),
           child: Particles(
             awayRadius: 100,
             particles: _createParticles(),
